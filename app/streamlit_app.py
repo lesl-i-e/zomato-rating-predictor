@@ -23,11 +23,12 @@ NAVY  = '#1B3A5C'
 GOLD  = '#C8960C'
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-BASE        = '/content/drive/MyDrive/Colab Notebooks/zomato-rating-predictor'
-MODEL_PATH  = f'{BASE}/models/xgb_model.pkl'
-COLS_PATH   = f'{BASE}/models/feature_columns.pkl'
-DATA_PATH   = f'{BASE}/data/zomato_clean.csv'
-RAW_PATH    = f'{BASE}/data/zomato.csv'
+import os
+BASE        = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH  = os.path.join(BASE, 'models', 'xgb_model.pkl')
+COLS_PATH   = os.path.join(BASE, 'models', 'feature_columns.pkl')
+DATA_PATH   = os.path.join(BASE, 'data', 'zomato_clean.csv')
+RAW_PATH    = os.path.join(BASE, 'data', 'zomato.csv')
 
 # ── Load model & metadata ──────────────────────────────────────────────────
 @st.cache_resource
